@@ -25,6 +25,7 @@
 #ifndef HW_ARM_STM32F405_SOC_H
 #define HW_ARM_STM32F405_SOC_H
 
+// clang-format off
 #include "hw/misc/stm32f4xx_syscfg.h"
 #include "hw/timer/stm32f2xx_timer.h"
 #include "hw/char/stm32f2xx_usart.h"
@@ -34,6 +35,7 @@
 #include "hw/ssi/stm32f2xx_spi.h"
 #include "hw/arm/armv7m.h"
 #include "qom/object.h"
+// clang-format on
 
 #define TYPE_STM32F405_SOC "stm32f405-soc"
 OBJECT_DECLARE_SIMPLE_TYPE(STM32F405State, STM32F405_SOC)
@@ -44,9 +46,9 @@ OBJECT_DECLARE_SIMPLE_TYPE(STM32F405State, STM32F405_SOC)
 #define STM_NUM_SPIS 6
 
 #define FLASH_BASE_ADDRESS 0x08000000
-#define FLASH_SIZE (1024 * 1024)
+#define FLASH_SIZE (10240 * 1024)
 #define SRAM_BASE_ADDRESS 0x20000000
-#define SRAM_SIZE (128 * 1024)
+#define SRAM_SIZE (10240 * 1024)
 #define CCM_BASE_ADDRESS 0x10000000
 #define CCM_SIZE (64 * 1024)
 
