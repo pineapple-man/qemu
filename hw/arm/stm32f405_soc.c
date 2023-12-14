@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
+//clang-format off
 #include "qemu/osdep.h"
 #include "qapi/error.h"
 #include "exec/address-spaces.h"
@@ -29,6 +29,7 @@
 #include "hw/arm/stm32f405_soc.h"
 #include "hw/qdev-clock.h"
 #include "hw/misc/unimp.h"
+//clang-format on
 
 #define SYSCFG_ADD                     0x40013800
 static const uint32_t usart_addr[] = { 0x40011000, 0x40004400, 0x40004800,
@@ -118,7 +119,7 @@ static void stm32f405_soc_realize(DeviceState *dev_soc, Error **errp)
     clock_set_mul_div(s->refclk, 8, 1);
     clock_set_source(s->refclk, s->sysclk);
 
-    memory_region_init_rom(&s->flash, OBJECT(dev_soc), "STM32F405.flash",
+    memory_region_init_ram(&s->flash, OBJECT(dev_soc), "STM32F405.flash",
                            FLASH_SIZE, &err);
     if (err != NULL) {
         error_propagate(errp, err);
