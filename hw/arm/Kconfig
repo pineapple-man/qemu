@@ -147,7 +147,13 @@ config OLIMEX_STM32_H405
     default y
     depends on TCG && ARM
     select STM32F405_SOC
-
+    
+config BYD_A2_M4
+    bool
+    default y
+    depends on TCG && ARM
+    select STM32F405_SOC
+    
 config NSERIES
     bool
     default y
